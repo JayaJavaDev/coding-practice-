@@ -1,83 +1,151 @@
-//calculator logic 
-let a = 20;
-let b = 10;
-let operator = "*";
-if(operator=="+"){
-console.log(a+b);
-}
-else if(operator=="-"){
-    console.log(a-b);
-}
-else if(operator=="*"){
-    console.log(a*b);
-}
-else if(operator=="/"){
-    console.log(a/b);
-}
-else if(operator=="%"){
-    console.log(a%b);
-}
-else{
-    console.log("invalid operator");
-}
+//1) Even or Odd
 
-//Create a variable `marks` to store student marks
+const check=(num)=>{
+    if(num%2===0){
+        return "Even";
+    }
+    else{
+        return "Odd"
+    }
+};
+console.log(check(4));
+console.log(check(7));
+console.log(check(0));
 
-let marks = 85;
-let bonus = 5;
+//2) Evaluator Pass or Fail
 
-//Add bonus marks using an assignment operator
-marks+= bonus;
-
-//Determine the grade using if-else
-let grade;
-if (marks >= 90) {
-    grade = "A";
-} 
-else if (marks >= 70) {
-    grade = "B";
-} 
-else if (marks >= 50) {
-    grade = "C";
-} 
-else {
-    grade = "F";
+function evaluateResult(marks) {
+    if (marks < 0 || marks > 100) {
+        console.log("Invalid marks");
+        return null;
+    }
+    else if (marks >= 50) {
+        return "Pass";
+    }
+    else {
+        return "Fail";
+    }
 }
+console.log(evaluateResult(75));
+console.log(evaluateResult(40));
+console.log(evaluateResult(120));
 
-//Determine Pass/Fail using a ternary operator
-let result = marks >= 50 ? "Pass" : "Fail";
+//3Maximum Finder — Largest of Three Numbers
 
-//Give remarks based on grade using a switch statement
-let remark;
-switch (grade) {
-    case "A":
-        remark = "Excellent!";
-        break;
-    case "B":
-        remark = "Good";
-        break;
-    case "C":
-        remark = "Average";
-        break;
-    case "F":
-        remark = "Needs Improvement";
-        break;
-    default:
-        remark = "Invalid Grade";
-}
-console.log("Marks:", marks);
-console.log("Grade:", grade);
-console.log("Result:", result);
-console.log("Remark:", remark);
+const findMax = (a, b, c) => {
+    if (a >= b && a >= c) {
+        return a;
+    } 
+    else if (b >= a && b >= c) {
+        return b;
+    }
+    else {
+        return c;
+    }
+};
+console.log(findMax(10, 25, 15)); 
+console.log(findMax(5, 3, 8));    
+console.log(findMax(9, 9, 2));    
 
-// Extra messages using logical operators
+//4)Sum from 1 to N
 
-if (marks >= 80 && result === "Pass") {
-    console.log("High marks with bonus!");
+function sumToN(n) {
+    let sum = 0;
+    for (let i = 1; i<= n; i++) {
+        sum = sum + i;
+    }
+    return sum;
 }
-if (marks >= 90 || grade === "A+") {
-    console.log("Outstanding performance!");
+console.log(sumToN(5));   
+console.log(sumToN(10));
+
+//5Multiplication Table 
+
+function printTable(num) {
+    for (let i = 1; i <= 10; i++) {
+        console.log(num + " x " + i + " = " + (num * i));
+    }
 }
-if (!(result === "Fail")) {
-    console.log("You are eligible for the next level.");
+printTable(3);
+
+//6)Digit Counter — Number Length Finder
+
+function countDigits(num) {
+    let count = 0;
+
+    while (num > 0) {
+        num = Math.floor(num / 10);
+        count++;
+    }
+
+    return count;
 }
+console.log(countDigits(1234));  
+console.log(countDigits(9));     
+console.log(countDigits(10000));
+
+//7) Number Reverser
+
+function reverseNumber(num) {
+    let rev= 0;
+
+    while (num > 0) {
+        let digit = num % 10;
+        rev = rev* 10 + digit;
+        num = Math.floor(num / 10);
+    }
+
+    return rev;
+}
+console.log(reverseNumber(1234)); 
+console.log(reverseNumber(500));  
+console.log(reverseNumber(91));   
+
+//8) Factorial
+
+function factorial(n) {
+    let result = 1;
+
+    for (let i = n; i >= 1; i--) {
+        result = result * i;
+    }
+
+    return result;
+}
+console.log(factorial(5)); 
+console.log(factorial(3)); 
+console.log(factorial(1));
+
+//9)prime- validator
+
+function isPrime(num) {
+    if (num < 2) {
+        return false;
+    }
+
+    for (let i = 2; i < num; i++) {
+        if (num % i === 0) {
+            return false;
+        }
+    }
+
+    return true;
+}
+console.log(isPrime(7));  
+console.log(isPrime(10)); 
+console.log(isPrime(2));
+
+//10)star pattern 
+
+function printPattern(n) {
+    for (let i = 1; i <= n; i++) {
+        let row = "";
+
+        for (let j = 1; j <= i; j++) {
+            row = row + "*";
+        }
+
+        console.log(row);
+    }
+}
+printPattern(4);
