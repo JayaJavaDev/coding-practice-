@@ -1,74 +1,81 @@
-//1) Even or Odd
+// 1) Even or Odd
 
-const check=(num)=>{
-    if(num%2===0){
+const check = (num) => {
+    if (num % 2 === 0) {
         return "Even";
-    }
-    else{
-        return "Odd"
+    } else {
+        return "Odd";
     }
 };
+
 console.log(check(4));
 console.log(check(7));
 console.log(check(0));
 
-//2) Evaluator Pass or Fail
+
+// 2) Evaluator Pass or Fail
 
 function evaluateResult(marks) {
     if (marks < 0 || marks > 100) {
         console.log("Invalid marks");
         return null;
-    }
-    else if (marks >= 50) {
+    } else if (marks >= 50) {
         return "Pass";
-    }
-    else {
+    } else {
         return "Fail";
     }
 }
+
 console.log(evaluateResult(75));
 console.log(evaluateResult(40));
 console.log(evaluateResult(120));
 
-//3Maximum Finder — Largest of Three Numbers
+
+// 3) Maximum Finder — Largest of Three Numbers
 
 const findMax = (a, b, c) => {
     if (a >= b && a >= c) {
         return a;
-    } 
-    else if (b >= a && b >= c) {
+    } else if (b >= a && b >= c) {
         return b;
-    }
-    else {
+    } else {
         return c;
     }
 };
-console.log(findMax(10, 25, 15)); 
-console.log(findMax(5, 3, 8));    
-console.log(findMax(9, 9, 2));    
 
-//4)Sum from 1 to N
+console.log(findMax(10, 25, 15));
+console.log(findMax(5, 3, 8));
+console.log(findMax(9, 9, 2));
+
+
+// 4) Sum from 1 to N
 
 function sumToN(n) {
     let sum = 0;
-    for (let i = 1; i<= n; i++) {
+
+    for (let i = 1; i <= n; i++) {
         sum = sum + i;
     }
+
     return sum;
 }
-console.log(sumToN(5));   
+
+console.log(sumToN(5));
 console.log(sumToN(10));
 
-//5Multiplication Table 
+
+// 5) Multiplication Table
 
 function printTable(num) {
     for (let i = 1; i <= 10; i++) {
         console.log(num + " x " + i + " = " + (num * i));
     }
 }
+
 printTable(3);
 
-//6)Digit Counter — Number Length Finder
+
+// 6) Digit Counter — Number Length Finder
 
 function countDigits(num) {
     let count = 0;
@@ -80,28 +87,32 @@ function countDigits(num) {
 
     return count;
 }
-console.log(countDigits(1234));  
-console.log(countDigits(9));     
+
+console.log(countDigits(1234));
+console.log(countDigits(9));
 console.log(countDigits(10000));
 
-//7) Number Reverser
+
+// 7) Number Reverser
 
 function reverseNumber(num) {
-    let rev= 0;
+    let rev = 0;
 
     while (num > 0) {
         let digit = num % 10;
-        rev = rev* 10 + digit;
+        rev = rev * 10 + digit;
         num = Math.floor(num / 10);
     }
 
     return rev;
 }
-console.log(reverseNumber(1234)); 
-console.log(reverseNumber(500));  
-console.log(reverseNumber(91));   
 
-//8) Factorial
+console.log(reverseNumber(1234));
+console.log(reverseNumber(500));
+console.log(reverseNumber(91));
+
+
+// 8) Factorial
 
 function factorial(n) {
     let result = 1;
@@ -112,11 +123,13 @@ function factorial(n) {
 
     return result;
 }
-console.log(factorial(5)); 
-console.log(factorial(3)); 
+
+console.log(factorial(5));
+console.log(factorial(3));
 console.log(factorial(1));
 
-//9)prime- validator
+
+// 9) Prime Validator
 
 function isPrime(num) {
     if (num < 2) {
@@ -131,11 +144,13 @@ function isPrime(num) {
 
     return true;
 }
-console.log(isPrime(7));  
-console.log(isPrime(10)); 
+
+console.log(isPrime(7));
+console.log(isPrime(10));
 console.log(isPrime(2));
 
-//10)star pattern 
+
+// 10) Star Pattern
 
 function printPattern(n) {
     for (let i = 1; i <= n; i++) {
@@ -148,4 +163,5 @@ function printPattern(n) {
         console.log(row);
     }
 }
+
 printPattern(4);
