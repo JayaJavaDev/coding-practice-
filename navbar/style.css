@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar{
+    display:flex;
+    justify-content: space-between;
+    background-color: #263A35;
+    color: ivory;
+    align-items: center;
+    padding:22px 60px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.logo{
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.navlink{
+    display: flex;
+    gap: 32px;
+    list-style: none;
+}
+
+.navlink a{
+   color:  #E5E0D6;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.btn{
+    padding:8px 25px;
+    border:none;
+     background-color: #795548;
+     color:white;
+     cursor: pointer;
+}
